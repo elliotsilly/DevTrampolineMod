@@ -1,4 +1,4 @@
-﻿using GorillaLocomotion;
+using GorillaLocomotion;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,12 +11,12 @@ namespace DevTrampolineMod.Behaviours
         public static event Action<AudioSource, float> PlayBounceSound;
         public GameObject trampoline;
 
-        private Player player;
+        private GTPlayer player;
         private AudioSource source;
 
         public void Start()
         {
-            player = Player.Instance;
+            player = GTPlayer.Instance;
             source = gameObject.transform.GetComponentInParent<AudioSource>();
         }
 
@@ -24,15 +24,15 @@ namespace DevTrampolineMod.Behaviours
         {
             Rigidbody rb = player.GetComponent<Rigidbody>();
             rb.velocity *= lighterForce ? 0.85f : 1.1f;
-            rb.AddForce(trampoline.transform.up * (lighterForce ? 5f : 10f) * Player.Instance.scale, ForceMode.VelocityChange);
+            rb.AddForce(trampoline.transform.up * (lighterForce ? 5f : 10f) * GTPlayer.Instance.scale, ForceMode.VelocityChange);
 
             PlayBounceSound?.Invoke(source, 1f / (lighterForce ? 1.5f : 1f));
         }
 
         public void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject != null && collision.gameObject.GetComponentInParent<Player>() != null) Impact(false);
-            else if (collision.rigidbody != null && collision.rigidbody.transform.GetComponentInParent<Player>() != null) Impact(false);
+            if (collision.gameObject != null && collision.gameObject.GetComponentInParent<GTPlayer>() != null) Impact(false);
+            else if (collision.rigidbody != null && collision.rigidbody.transform.GetComponentInParent<GTPlayer>() != null) Impact(false);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Text;
 using DevTrampolineMod.Behaviours;
@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace DevTrampolineMod.Patches
 {
-    [HarmonyPatch(typeof(Player), "GetSlidePercentage")]
+    [HarmonyPatch(typeof(GTPlayer), "GetSlidePercentage")]
     public class PlayerSlipPatch
     {
         private static Bounce component;

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using GorillaLocomotion;
@@ -82,10 +82,10 @@ namespace DevTrampolineMod.Behaviours
                     Destroy(_preview.transform.GetChild(0).gameObject);
                 }
 
-                if (Physics.Raycast(Player.Instance.rightHandFollower.position, -Player.Instance.rightControllerTransform.up, out RaycastHit hit, 250 * Player.Instance.scale, Player.Instance.locomotionEnabledLayers))
+                if (Physics.Raycast(GTPlayer.Instance.rightHandFollower.position, -GTPlayer.Instance.rightControllerTransform.up, out RaycastHit hit, 250 * GTPlayer.Instance.scale, GTPlayer.Instance.locomotionEnabledLayers))
                 {
-                    _preview.transform.position = hit.point + (hit.normal * 0.15f * Player.Instance.scale);
-                    _preview.transform.localScale = Vector3.one * 0.5f * Player.Instance.scale;
+                    _preview.transform.position = hit.point + (hit.normal * 0.15f * GTPlayer.Instance.scale);
+                    _preview.transform.localScale = Vector3.one * 0.5f * GTPlayer.Instance.scale;
                     _preview.transform.up = hit.normal;
                 }
 

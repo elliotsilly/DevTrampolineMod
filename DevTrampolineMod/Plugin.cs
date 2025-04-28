@@ -1,14 +1,15 @@
-﻿using BepInEx;
+using BepInEx;
 using Bepinject;
 using HarmonyLib;
 using System;
 using System.ComponentModel;
 using Utilla;
+using Utilla.Attributes;
 
 namespace DevTrampolineMod
 {
     [ModdedGamemode, Description("HauntedModMenu")]
-    [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
+    [BepInDependency("org.legoandmars.gorillatag.utilla", "1.6.17.1")]
     [BepInPlugin(Constants.Guid, Constants.Name, Constants.Version)]
     public class Plugin : BaseUnityPlugin
     {

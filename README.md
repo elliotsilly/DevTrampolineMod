@@ -1,4 +1,4 @@
-# DevTrampolineMod
+# DevTrampolineMod ![all](https://img.shields.io/github/downloads/elliotsilly/DevTrampolineMod/total)
  A mod for Gorilla Tag which adds interactible trampolines. 
 
 ## License
